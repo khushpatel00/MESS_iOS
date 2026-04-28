@@ -1,0 +1,22 @@
+# Xcode and Swift build artifacts
+build/
+DerivedData/
+
+# User-specific settings (Window positions, open files, etc.)
+xcuserdata/
+
+# Swift Package Manager
+.swiftpm/xcode/package.xcresult
+.swiftpm/xcode/logs
+.build/
+
+# CocoaPods (if using)
+Pods/
+*.xcworkspace
+
+# Carthage (if using)
+Carthage/Build/
+
+# macOS system files
+.DS_Store
+
