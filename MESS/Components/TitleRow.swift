@@ -22,11 +22,11 @@ struct TitleRow: View {
                 Text(userName)
                     .font(.title)
                     .fontWeight(.bold)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.black)
                 
                 Text("Online")
                     .font(.caption)
-                    .foregroundStyle(.bar)
+                    .foregroundStyle(.gray)
             }
             Spacer()
             Image(systemName: "phone.fill")
@@ -46,5 +46,7 @@ struct TitleRow: View {
 
 #Preview {
     TitleRow()
-        .background(Color(.brown))
+        .background(Color("Theme"))
+        .clipShape(.capsule)
+        .padding()
 }

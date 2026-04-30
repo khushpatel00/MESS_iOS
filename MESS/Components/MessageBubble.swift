@@ -16,7 +16,7 @@ struct MessageBubble: View {
                 Text(message.message)
                     .padding()
                     .background(Color(message.isSent ? "Theme" : "Gray"))
-                //                  .clipShape(.buttonBorder)
+//                  .clipShape(.buttonBorder)
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: message.isSent ? .trailing : .leading)
