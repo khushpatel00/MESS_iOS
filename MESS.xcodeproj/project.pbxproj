@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,24 +63,18 @@
 /* Begin PBXFrameworksBuildPhase section */
 		176AF7DC2F9FDF1F00F1999D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7EC2F9FDF2200F1999D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7F62F9FDF2200F1999D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -177,8 +171,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = MESS;
 			productName = MESS;
 			productReference = 176AF7DF2F9FDF1F00F1999D /* MESS.app */;
@@ -244,7 +236,6 @@
 				};
 			};
 			buildConfigurationList = 176AF7DA2F9FDF1F00F1999D /* Build configuration list for PBXProject "MESS" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -252,6 +243,7 @@
 				Base,
 			);
 			mainGroup = 176AF7D62F9FDF1F00F1999D;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 176AF7E02F9FDF1F00F1999D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,34 +258,27 @@
 /* Begin PBXResourcesBuildPhase section */
 		176AF7DD2F9FDF1F00F1999D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				176AF7EA2F9FDF2100F1999D /* Preview Assets.xcassets in Resources */,
 				176AF7E72F9FDF2100F1999D /* Assets.xcassets in Resources */,
 				1785FCAF2FA07BBB00F536E9 /* .gitignore in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7ED2F9FDF2200F1999D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7F72F9FDF2200F1999D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		176AF7DB2F9FDF1F00F1999D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				1785FCAC2FA07BA200F536E9 /* Untitled.swift in Sources */,
 				176AF7E52F9FDF1F00F1999D /* ContentView.swift in Sources */,
@@ -304,24 +289,19 @@
 				176AF7E32F9FDF1F00F1999D /* MESSApp.swift in Sources */,
 				1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7EB2F9FDF2200F1999D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				176AF7F42F9FDF2200F1999D /* MESSTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		176AF7F52F9FDF2200F1999D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				176AF8002F9FDF2200F1999D /* MESSUITestsLaunchTests.swift in Sources */,
 				176AF7FE2F9FDF2200F1999D /* MESSUITests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -339,7 +319,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		176AF8012F9FDF2200F1999D /* Debug */ = {
+		176AF8012F9FDF2200F1999D /* Debug configuration for PBXProject "MESS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -403,7 +383,7 @@
 			};
 			name = Debug;
 		};
-		176AF8022F9FDF2200F1999D /* Release */ = {
+		176AF8022F9FDF2200F1999D /* Release configuration for PBXProject "MESS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -460,63 +440,73 @@
 			};
 			name = Release;
 		};
-		176AF8042F9FDF2200F1999D /* Debug */ = {
+		176AF8042F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MESS/Preview Content\"";
+				DEVELOPMENT_TEAM = T37Z2VL76A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MESS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kaducodes.MESS;
+				MARKETING_VERSION = "1.010-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = khushcodes.MESS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		176AF8052F9FDF2200F1999D /* Release */ = {
+		176AF8052F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESS" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MESS/Preview Content\"";
+				DEVELOPMENT_TEAM = T37Z2VL76A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MESS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kaducodes.MESS;
+				MARKETING_VERSION = "1.010-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = khushcodes.MESS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		176AF8072F9FDF2200F1999D /* Debug */ = {
+		176AF8072F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESSTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,7 +524,7 @@
 			};
 			name = Debug;
 		};
-		176AF8082F9FDF2200F1999D /* Release */ = {
+		176AF8082F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESSTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -552,7 +542,7 @@
 			};
 			name = Release;
 		};
-		176AF80A2F9FDF2200F1999D /* Debug */ = {
+		176AF80A2F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESSUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -568,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		176AF80B2F9FDF2200F1999D /* Release */ = {
+		176AF80B2F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESSUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -590,37 +580,33 @@
 		176AF7DA2F9FDF1F00F1999D /* Build configuration list for PBXProject "MESS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				176AF8012F9FDF2200F1999D /* Debug */,
-				176AF8022F9FDF2200F1999D /* Release */,
+				176AF8012F9FDF2200F1999D /* Debug configuration for PBXProject "MESS" */,
+				176AF8022F9FDF2200F1999D /* Release configuration for PBXProject "MESS" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		176AF8032F9FDF2200F1999D /* Build configuration list for PBXNativeTarget "MESS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				176AF8042F9FDF2200F1999D /* Debug */,
-				176AF8052F9FDF2200F1999D /* Release */,
+				176AF8042F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESS" */,
+				176AF8052F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESS" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		176AF8062F9FDF2200F1999D /* Build configuration list for PBXNativeTarget "MESSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				176AF8072F9FDF2200F1999D /* Debug */,
-				176AF8082F9FDF2200F1999D /* Release */,
+				176AF8072F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESSTests" */,
+				176AF8082F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESSTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		176AF8092F9FDF2200F1999D /* Build configuration list for PBXNativeTarget "MESSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				176AF80A2F9FDF2200F1999D /* Debug */,
-				176AF80B2F9FDF2200F1999D /* Release */,
+				176AF80A2F9FDF2200F1999D /* Debug configuration for PBXNativeTarget "MESSUITests" */,
+				176AF80B2F9FDF2200F1999D /* Release configuration for PBXNativeTarget "MESSUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
