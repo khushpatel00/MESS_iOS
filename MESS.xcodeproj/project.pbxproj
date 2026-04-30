@@ -16,6 +16,7 @@
 		176AF8002F9FDF2200F1999D /* MESSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176AF7FF2F9FDF2200F1999D /* MESSUITestsLaunchTests.swift */; };
 		1785FCAC2FA07BA200F536E9 /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785FCAB2FA07BA100F536E9 /* Untitled.swift */; };
 		1785FCAF2FA07BBB00F536E9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1785FCAE2FA07BBB00F536E9 /* .gitignore */; };
+		1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785FCB42FA0917100F536E9 /* TitleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		176AF7FF2F9FDF2200F1999D /* MESSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MESSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1785FCAB2FA07BA100F536E9 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		1785FCAE2FA07BBB00F536E9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1785FCB42FA0917100F536E9 /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				176AF7E22F9FDF1F00F1999D /* MESSApp.swift */,
 				176AF7E42F9FDF1F00F1999D /* ContentView.swift */,
 				1785FCAB2FA07BA100F536E9 /* Untitled.swift */,
+				1785FCB12FA0913200F536E9 /* Components */,
 				176AF7E62F9FDF2100F1999D /* Assets.xcassets */,
 				176AF7E82F9FDF2100F1999D /* Preview Content */,
 			);
@@ -131,6 +134,14 @@
 				176AF7FF2F9FDF2200F1999D /* MESSUITestsLaunchTests.swift */,
 			);
 			path = MESSUITests;
+			sourceTree = "<group>";
+		};
+		1785FCB12FA0913200F536E9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1785FCB42FA0917100F536E9 /* TitleRow.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +208,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					176AF7DE2F9FDF1F00F1999D = {
 						CreatedOnToolsVersion = 15.4;
@@ -267,6 +278,7 @@
 				1785FCAC2FA07BA200F536E9 /* Untitled.swift in Sources */,
 				176AF7E52F9FDF1F00F1999D /* ContentView.swift in Sources */,
 				176AF7E32F9FDF1F00F1999D /* MESSApp.swift in Sources */,
+				1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +373,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -417,6 +430,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -481,7 +495,6 @@
 		176AF8072F9FDF2200F1999D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -500,7 +513,6 @@
 		176AF8082F9FDF2200F1999D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -519,7 +531,6 @@
 		176AF80A2F9FDF2200F1999D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -536,7 +547,6 @@
 		176AF80B2F9FDF2200F1999D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
