@@ -22,7 +22,7 @@ struct TitleRow: View {
                 Text(userName)
                     .font(.title)
                     .fontWeight(.bold)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color("ThemedText"))
                 
                 Text("Online")
                     .font(.caption)

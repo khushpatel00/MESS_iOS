@@ -19,7 +19,7 @@ struct ContentView: View {
                 .padding(.top, 20)
                 
             }
-            .background(Color(.white))
+            .background(Color("Background"))
             .cornerRadius(30, corners: [.topLeft, .topRight])
             .shadow(color: Color(UIColor(white: 0, alpha: 0.35)), radius: 20)
         }
