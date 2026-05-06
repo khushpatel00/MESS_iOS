@@ -12,31 +12,37 @@ struct ContentView: View {
     
 //    @StateObject var socket = RawWebSocketManager()
     @StateObject private var socket = WebSocketManager()
-    @State private var messageInput = "Hiee !"
+    @State private var messageInput = ""
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var focus: Bool
     
-    var messageArray = ["Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly"]
+    var messageArray = ["Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly", "Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly"]
     var body: some View {
         VStack(alignment: .center) {
-            TitleRow()
+            
+                
             ScrollView{
                 ForEach(messageArray, id: \.self) { text in
-                    MessageBubble(message: Message(id: "12345", message: text, isSent: false, timeStamp: Date()))
+                    MessageBubble(message: Message(id: "12345", message: text, isSent: (((arc4random()) % 2) == 0), timeStamp: Date()))
                 }
-                .padding(.top, 20)
+            }
+//            .clipped()
+            .safeAreaInset(edge: .top){
+                TitleRow()
+//                    .background(Color("Theme"))
+                    .background(.ultraThinMaterial)
+                    .clipShape(.capsule)
+                    .padding([.horizontal])
             }
             .safeAreaInset(edge: .bottom) {
-//                VStack {
                     HStack {
                         TextField("Message", text: $messageInput)
                             .focused($focus)
                             .padding() // between the text and inputbox
                             .background(Color("Foreground"))
+//                            .background(.ultraThinMaterial)
                             .clipShape(.capsule)
-                            .padding([.vertical, .leading])
-                        //                      .textFieldStyle(.roundedBorder)
-                        
+                            .padding([.vertical, .leading], 10)
                         VStack {
                             HStack{
                                 Button(action: {
@@ -58,22 +64,22 @@ struct ContentView: View {
                             }
                         }
 //                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding([.vertical, .trailing])
-                        .background(Color("Background"))
+                        .padding([.vertical, .trailing], 10)
                     }
-                    .padding(.vertical, 10) // required when keyboard is not in view
+//                  .background(Color(.gray))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(.infinity, corners: .allCorners)
+                    .padding()
                     .padding(.bottom, keyboardHeight)
                     .animation(.easeOut(duration: 0.25), value: keyboardHeight)
-//                }
             }
             .background(Color("Background"))
-            .cornerRadius(30, corners: [.topLeft, .topRight])
         }
         .onAppear {
             KeyboardObserver()
         }
         .ignoresSafeArea(edges: .bottom) // for keeping the experience more better
-        .background(Color("Theme"))
+        .background(Color("Background"))
     }
     
     func KeyboardObserver() {

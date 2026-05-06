@@ -45,7 +45,7 @@ struct TitleRow: View {
 
 #Preview {
     TitleRow()
-        .background(Color("Theme"))
+        .background(Color("Background"))
         .clipShape(.capsule)
         .padding()
 }
