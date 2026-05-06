@@ -32,7 +32,7 @@ struct ContentView: View {
                         TextField("Message", text: $messageInput)
                             .focused($focus)
                             .padding() // between the text and inputbox
-                            .background()
+                            .background(Color("Foreground"))
                             .clipShape(.capsule)
                             .padding([.vertical, .leading])
                         //                      .textFieldStyle(.roundedBorder)
@@ -44,7 +44,7 @@ struct ContentView: View {
                                 }){
                                    Image(systemName: "link")
                                         .padding()
-                                        .background()
+                                        .background(Color("Foreground"))
                                         .clipShape(.capsule)
                                 }
                                 Button(action: {
@@ -52,7 +52,7 @@ struct ContentView: View {
                                 }) {
                                     Image(systemName: "paperplane.fill")
                                         .padding()
-                                        .background()
+                                        .background(Color("Foreground"))
                                         .clipShape(.capsule)
                                 }
                             }
@@ -61,7 +61,7 @@ struct ContentView: View {
                         .padding([.vertical, .trailing])
                         .background(Color("Background"))
                     }
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 10) // required when keyboard is not in view
                     .padding(.bottom, keyboardHeight)
                     .animation(.easeOut(duration: 0.25), value: keyboardHeight)
 //                }
