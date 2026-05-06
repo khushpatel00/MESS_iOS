@@ -16,12 +16,13 @@ struct MessageBubble: View {
                 Text(message.message)
                     .padding()
                     .background(Color(message.isSent ? "Theme" : "Gray"))
-//                  .clipShape(.buttonBorder)
                     .cornerRadius(30)
             }
             .frame(maxWidth: 300, alignment: message.isSent ? .trailing : .leading)
             .onTapGesture{
-                showTime.toggle()
+                withAnimation{
+                    showTime.toggle()
+                }
             }
             
             if showTime {
@@ -29,6 +30,7 @@ struct MessageBubble: View {
                     .foregroundStyle(.gray)
                     .padding(.horizontal)
                     .font(.caption)
+                    .transition(.opacity.combined(with: .opacity))
             }
         }
         .frame(maxWidth: .infinity, alignment: message.isSent ? .trailing : .leading)

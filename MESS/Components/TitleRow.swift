@@ -36,7 +36,6 @@ struct TitleRow: View {
                 .padding(10)
                 .background(.white)
                 .clipShape(.circle)
-                
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
