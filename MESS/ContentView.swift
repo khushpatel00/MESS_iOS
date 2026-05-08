@@ -2,103 +2,49 @@
 //  ContentView.swift
 //  MESS
 //
-//  Created by khush on 27/04/2026.
+//  Created by khush on 07/05/2026.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
-    
-//    @StateObject var socket = RawWebSocketManager()
-    @StateObject private var socket = WebSocketManager()
-    @State private var messageInput = ""
-    @State private var keyboardHeight: CGFloat = 0
-    @FocusState private var focus: Bool
-    
-    var messageArray = ["Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly", "Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly","Hi There !!", "How you're doin",  "Im glad, we could talk to you on a Private Server, where no one could read our conversations directly"]
     var body: some View {
-        VStack(alignment: .center) {
-            
-                
+        NavigationView {
             ScrollView{
-                ForEach(messageArray, id: \.self) { text in
-                    MessageBubble(message: Message(id: "12345", message: text, isSent: (((arc4random()) % 2) == 0), timeStamp: Date()))
+                NavigationLink {
+                    ChatView(username: "Hideo Kojima")
+                } label: {
+                    TitleRow(username: "Hideo Kojima" , isConnected: true)
+                        .background(.ultraThinMaterial)
+//                        .clipShape(.capsule)
+//                        .padding(.horizontal)
+                }
+                .navigationTitle("Chats")
+                NavigationLink {
+                    ChatView(username: "Sam")
+                } label: {
+                    TitleRow(username: "Sam" , isConnected: true)
+                        .background(.ultraThinMaterial)
+//                        .clipShape(.capsule)
+//                        .padding(.horizontal)
+                }
+                NavigationLink {
+                    ChatView(username: "Fragile")
+                } label: {
+                    TitleRow(username: "Fragile" , isConnected: true)
+                        .background(.ultraThinMaterial)
+//                        .clipShape(.capsule)
+//                        .padding(.horizontal)
+                }
+                NavigationLink {
+                    ChatView(username: "Higgs")
+                } label: {
+                    TitleRow(username: "Higgs" , isConnected: true)
+                        .background(.ultraThinMaterial)
+//                        .clipShape(.capsule)
+//                        .padding(.horizontal)
                 }
             }
-//            .clipped()
-            .safeAreaInset(edge: .top){
-                TitleRow()
-//                    .background(Color("Theme"))
-                    .background(.ultraThinMaterial)
-                    .clipShape(.capsule)
-                    .padding([.horizontal])
-            }
-            .safeAreaInset(edge: .bottom) {
-                    HStack {
-                        TextField("Message", text: $messageInput)
-                            .focused($focus)
-                            .padding() // between the text and inputbox
-                            .background(Color("Foreground"))
-//                            .background(.ultraThinMaterial)
-                            .clipShape(.capsule)
-                            .padding([.vertical, .leading], 10)
-                        VStack {
-                            HStack{
-                                Button(action: {
-                                    socket.connect()
-                                }){
-                                   Image(systemName: "link")
-                                        .padding()
-                                        .background(Color("Foreground"))
-                                        .clipShape(.capsule)
-                                }
-                                Button(action: {
-                                    socket.send(message: "Hello from iOS implementation of MESS app")
-                                }) {
-                                    Image(systemName: "paperplane.fill")
-                                        .padding()
-                                        .background(Color("Foreground"))
-                                        .clipShape(.capsule)
-                                }
-                            }
-                        }
-//                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding([.vertical, .trailing], 10)
-                    }
-//                  .background(Color(.gray))
-                    .background(.ultraThinMaterial)
-                    .cornerRadius(.infinity, corners: .allCorners)
-                    .padding()
-                    .padding(.bottom, keyboardHeight)
-                    .animation(.easeOut(duration: 0.25), value: keyboardHeight)
-            }
-            .background(Color("Background"))
-        }
-        .onAppear {
-            KeyboardObserver()
-        }
-        .ignoresSafeArea(edges: .bottom) // for keeping the experience more better
-        .background(Color("Background"))
-    }
-    
-    func KeyboardObserver() {
-        NotificationCenter.default.addObserver(
-            forName: UIResponder.keyboardWillShowNotification,
-            object: nil,
-            queue: .main
-        ) { notification in
-            if let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect{
-                keyboardHeight = frame.height
-            }
-        }
-        
-        NotificationCenter.default.addObserver(
-            forName: UIResponder.keyboardWillHideNotification,
-            object: nil,
-            queue: .main
-        ) { _ in
-            keyboardHeight = 0
         }
     }
 }

@@ -1,17 +1,16 @@
 //
-//  TitleRow.swift
+//  MessageTitleRow.swift
 //  MESS
 //
-//  Created by khush on 28/04/2026.
+//  Created by khush on 08/05/2026.
 //
 
 import SwiftUI
 
-struct TitleRow: View {
-
-    var username = "Hideo Kojima"
-    let isConnected: Bool
+struct MessageTitleRow: View {
     
+    var username: String
+    var isConnected: Bool = false
     var body: some View {
         HStack(spacing: 15){
             Image("ProfileSamPorter")
@@ -46,13 +45,10 @@ struct TitleRow: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        
+        .navigationTitle(username)
     }
 }
 
 #Preview {
-    TitleRow(isConnected: false)
-        .background(Color("Background"))
-        .clipShape(.capsule)
-        .padding()
+    MessageTitleRow(username: "Hideo Kojima", isConnected: true)
 }

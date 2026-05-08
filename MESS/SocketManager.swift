@@ -9,6 +9,8 @@ import Foundation
 import SocketIO
 
 class WebSocketManager: ObservableObject {
+    
+    @Published var isConnected: Bool = false
 
     var manager: SocketManager!
     var socket: SocketIOClient!
@@ -16,7 +18,7 @@ class WebSocketManager: ObservableObject {
     init() {
 
         manager = SocketManager(
-            socketURL: URL(string: "http://192.168.1.28:8080")!,
+            socketURL: URL(string: "http://192.168.205.195:8080")!,
             config: [
                 .log(true),
                 .compress,
@@ -46,12 +48,22 @@ class WebSocketManager: ObservableObject {
 
     func setupListeners() {
 
-        socket.on(clientEvent: .connect) { data, ack in
+        socket.on(clientEvent: .connect) { [weak self] data, ack in
             print("Connected to server")
+//            isConnected = true
+            
+            DispatchQueue.main.async {
+                self?.isConnected = true
+            }
         }
 
-        socket.on(clientEvent: .disconnect) { data, ack in
+        socket.on(clientEvent: .disconnect) { [weak self] data, ack in
             print("Disconnected")
+//            isConnected = false
+            
+            DispatchQueue.main.async {
+                self?.isConnected = false
+            }
         }
 
         socket.on("message") { data, ack in
