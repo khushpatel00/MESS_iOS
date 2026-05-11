@@ -1,4 +1,12 @@
 //
+//  MessageBubble 2.swift
+//  MESS
+//
+//  Created by khush on 12/05/2026.
+//
+
+
+//
 //  MessageBubble.swift
 //  MESS
 //
@@ -7,19 +15,19 @@
 
 import SwiftUI
 
-struct MessageBubble: View {
+struct BroadcastMessageBubble: View {
     var message: Message
+    var displayName: String?
     @State private var showTime = false
     var body: some View {
         VStack (alignment: message.isSent ? .trailing : .leading) {
-            HStack(alignment: .bottom){
-                if !message.isSent {
-                    Image("ProfileSamPorter")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 30, height: 30)
-                        .clipShape(.capsule)
-                        .padding(.bottom, 5)
+            VStack(alignment: message.isSent ? .trailing : .leading){
+                if displayName != nil { // same as `if displayName is String`
+                    Text(displayName!)
+                        .foregroundStyle(.gray)
+                        .padding(.leading)
+                        .offset(y: 10)
+                        .font(.subheadline)
                 }
                 Text(message.message)
                     .padding()
@@ -47,6 +55,6 @@ struct MessageBubble: View {
 }
 
 #Preview {
-    MessageBubble(message: Message(id: "12345", message: "This is a message block, that is being used just for the testing purposes only !!!", isSent: false, timeStamp: Date()))
-    MessageBubble(message: Message(id: "12345", message: "Glad, I Didn't knew that !!!", isSent: true, timeStamp: Date()))
+    BroadcastMessageBubble(message: Message(id: "12345", message: "This is a message block, that is being used just for the testing purposes only !!!", isSent: false, timeStamp: Date()), displayName: "Sam")
+    BroadcastMessageBubble(message: Message(id: "12345", message: "Glad, I Didn't knew that !!!", isSent: true, timeStamp: Date()), displayName: nil)
 }

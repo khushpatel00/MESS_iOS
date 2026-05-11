@@ -10,7 +10,7 @@ import SwiftUI
 struct Landing: View {
     var body: some View {
         TabView{
-            ContentView()
+            DMContentView()
                 .padding(.bottom, 1)
                 .background(Color("Background"))
                 .tabItem {
@@ -21,7 +21,8 @@ struct Landing: View {
                     }
                 }
             
-            ChatView(socketURL: "", username: "Broadcast")
+//            BroadcastChatView(socketURL: "http://", username: "Broadcast")
+            BroadcastContentView()
                 .padding(.bottom, 1)
                 .background(Color("Background"))
                 .tabItem{
@@ -32,10 +33,12 @@ struct Landing: View {
                     }
                 }
         }
-        .padding(.top)
+//        .padding(.top)
         .safeAreaInset(edge: .bottom) {
             Color.clear.frame(height: 20) // Effectively adds "padding" to the bottom safe area
         }
+        .ignoresSafeArea(edges: .top)
+        
         
         
         //            VStack{
@@ -73,4 +76,5 @@ struct Landing: View {
 
 #Preview {
     Landing()
+        .background(Color("Background"))
 }

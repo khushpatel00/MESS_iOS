@@ -23,8 +23,12 @@
 		1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1785FCB42FA0917100F536E9 /* TitleRow.swift */; };
 		178CA9222FA373E000F4E529 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CA9212FA373E000F4E529 /* MessageField.swift */; };
 		178CA9242FA37A3500F4E529 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CA9232FA37A3500F4E529 /* Extensions.swift */; };
+		179160922FB100BF008526A6 /* BroadcastContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179160912FB100BF008526A6 /* BroadcastContentView.swift */; };
+		179160942FB101F3008526A6 /* BroadcastChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179160932FB101F3008526A6 /* BroadcastChatView.swift */; };
 		17AE53412FADE31500E592D0 /* MessageTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE53402FADE31500E592D0 /* MessageTitleRow.swift */; };
-		17D753E92FAD020100942CD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D753E82FAD020100942CD8 /* ContentView.swift */; };
+		17B50F372FB26F8300F499BF /* MessageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B50F362FB26F8300F499BF /* MessageArray.swift */; };
+		17B50F392FB2754C00F499BF /* BroadcastMessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B50F382FB2754B00F499BF /* BroadcastMessageBubble.swift */; };
+		17D753E92FAD020100942CD8 /* DMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D753E82FAD020100942CD8 /* DMContentView.swift */; };
 		17FA527D2FB0D87200A25CCC /* DMSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +68,12 @@
 		1785FCB42FA0917100F536E9 /* TitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRow.swift; sourceTree = "<group>"; };
 		178CA9212FA373E000F4E529 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
 		178CA9232FA37A3500F4E529 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		179160912FB100BF008526A6 /* BroadcastContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastContentView.swift; sourceTree = "<group>"; };
+		179160932FB101F3008526A6 /* BroadcastChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastChatView.swift; sourceTree = "<group>"; };
 		17AE53402FADE31500E592D0 /* MessageTitleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTitleRow.swift; sourceTree = "<group>"; };
-		17D753E82FAD020100942CD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17B50F362FB26F8300F499BF /* MessageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageArray.swift; sourceTree = "<group>"; };
+		17B50F382FB2754B00F499BF /* BroadcastMessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastMessageBubble.swift; sourceTree = "<group>"; };
+		17D753E82FAD020100942CD8 /* DMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMContentView.swift; sourceTree = "<group>"; };
 		17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSocketManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				175D1F8A2FA367440054C52E /* Message.swift */,
+				17B50F362FB26F8300F499BF /* MessageArray.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,10 +132,12 @@
 			children = (
 				176AF7E22F9FDF1F00F1999D /* MESSApp.swift */,
 				175EB6D52FAF342C00D6E78E /* Landing.swift */,
-				17D753E82FAD020100942CD8 /* ContentView.swift */,
+				17D753E82FAD020100942CD8 /* DMContentView.swift */,
+				179160912FB100BF008526A6 /* BroadcastContentView.swift */,
 				176AF7E42F9FDF1F00F1999D /* ChatView.swift */,
-				176C60942FAB37FB000CAF5F /* BroadcastSocketManager.swift */,
+				179160932FB101F3008526A6 /* BroadcastChatView.swift */,
 				17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */,
+				176C60942FAB37FB000CAF5F /* BroadcastSocketManager.swift */,
 				175D1F892FA3672F0054C52E /* Models */,
 				1785FCB12FA0913200F536E9 /* Components */,
 				176AF7E62F9FDF2100F1999D /* Assets.xcassets */,
@@ -156,6 +167,7 @@
 		1785FCB12FA0913200F536E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				17B50F382FB2754B00F499BF /* BroadcastMessageBubble.swift */,
 				1785FCB42FA0917100F536E9 /* TitleRow.swift */,
 				175D1F872FA364810054C52E /* MessageBubble.swift */,
 				178CA9212FA373E000F4E529 /* MessageField.swift */,
@@ -292,15 +304,19 @@
 			isa = PBXSourcesBuildPhase;
 			files = (
 				176AF7E52F9FDF1F00F1999D /* ChatView.swift in Sources */,
+				17B50F372FB26F8300F499BF /* MessageArray.swift in Sources */,
 				173EDBA22FB057BE00CD93D4 /* SheetExtension.swift in Sources */,
 				175D1F882FA364810054C52E /* MessageBubble.swift in Sources */,
 				178CA9242FA37A3500F4E529 /* Extensions.swift in Sources */,
 				175EB6D62FAF342C00D6E78E /* Landing.swift in Sources */,
 				176C60952FAB37FB000CAF5F /* BroadcastSocketManager.swift in Sources */,
 				178CA9222FA373E000F4E529 /* MessageField.swift in Sources */,
-				17D753E92FAD020100942CD8 /* ContentView.swift in Sources */,
+				17D753E92FAD020100942CD8 /* DMContentView.swift in Sources */,
+				179160942FB101F3008526A6 /* BroadcastChatView.swift in Sources */,
 				17FA527D2FB0D87200A25CCC /* DMSocketManager.swift in Sources */,
+				17B50F392FB2754C00F499BF /* BroadcastMessageBubble.swift in Sources */,
 				175D1F8B2FA367440054C52E /* Message.swift in Sources */,
+				179160922FB100BF008526A6 /* BroadcastContentView.swift in Sources */,
 				176AF7E32F9FDF1F00F1999D /* MESSApp.swift in Sources */,
 				1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */,
 				17AE53412FADE31500E592D0 /* MessageTitleRow.swift in Sources */,

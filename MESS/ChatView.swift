@@ -24,7 +24,7 @@ struct ChatView: View {
         self.socketURL = socketURL
         self.username = username
         
-        _socket = StateObject(wrappedValue: BroadcastWebSocketManager(socketUrl: socketURL))
+        _socket = StateObject(wrappedValue: BroadcastWebSocketManager(socketUrl: socketURL, username: username))
         
     }
     
@@ -57,7 +57,7 @@ struct ChatView: View {
                     VStack {
                         HStack{
                             Button(action: {
-                                socket.connect()
+                                socket.connect(to: self.socketURL)
                                 print("socket connection sent")
                             }){
                                 Image(systemName: socket.isConnected ? "link.circle.fill" : "link")

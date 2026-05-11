@@ -7,19 +7,23 @@
 
 import SwiftUI
 
-extension ContentView {
+extension DMContentView {
     public var connectionSheet: some View {
         NavigationView {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center) {
                 Text("Enter Server URI")
                     .font(.title2)
                     .bold()
+                Text("Please dont add '/' at the end of url")
+                    .font(.caption)
+                    .padding(.bottom)
+                    .foregroundColor(.gray)
                 TextField(
                     "Socket URI",
                     text: $inputText
                 )
                 
-                .foregroundStyle(.white)
+                .foregroundStyle(Color("ThemedText"))
                 .padding()
                 .background(.ultraThinMaterial)
                 .clipShape(.capsule)
@@ -31,7 +35,7 @@ extension ContentView {
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(.ultraThinMaterial)
-                .foregroundColor(.white)
+                .foregroundColor(Color("ThemedText"))
                 .clipShape(.capsule)
                 .padding(.horizontal)
 //                Spacer()
@@ -43,5 +47,46 @@ extension ContentView {
         .background(.ultraThinMaterial)
 
     }
+}
 
+extension BroadcastChatView {
+    public var connectionSheet: some View {
+        NavigationView {
+            VStack(alignment: .center) {
+                Text("Enter Server URI")
+                    .font(.title2)
+                    .bold()
+                Text("Please dont add '/' at the end of url")
+                    .font(.caption)
+                    .padding(.bottom)
+                    .foregroundColor(.gray)
+                TextField(
+                    "Socket URI",
+                    text: $SocketURL
+                )
+                
+                .foregroundStyle(Color("ThemedText"))
+                .padding()
+                .background(.ultraThinMaterial)
+                .clipShape(.capsule)
+                .padding(.horizontal)
+                Button("Connect") {
+                    socket.connect(to: socketURL)
+                    showingAlert = false
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.ultraThinMaterial)
+                .foregroundColor(Color("ThemedText"))
+                .clipShape(.capsule)
+                .padding(.horizontal)
+//                Spacer()
+            }
+            .padding()
+            .navigationTitle("Connect")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .background(.ultraThinMaterial)
+
+    }
 }

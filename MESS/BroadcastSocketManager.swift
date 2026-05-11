@@ -7,20 +7,45 @@
 
 import Foundation
 import SocketIO
+import UIKit
 
 class BroadcastWebSocketManager: ObservableObject {
-    
+
     @Published var isConnected: Bool = false
     var manager: SocketManager!
     var socket: SocketIOClient!
-
-    init(socketUrl: String) {
+    var socketUrl: String
+    var username: String
+    var displayName: String
+//    public struct MessageArray : Identifiable, Codable, Hashable {
+//        var id: String
+//        var message: String
+//        var isSent: Bool
+//    }
+    @Published var messageArray: [MessageArray] = [
+        MessageArray(
+            id: "65487213",
+            message: "Hello iOS!!",
+            isSent: false,
+            displayName: "Sam"
+        ),
+        MessageArray(
+            id: "98741265",
+            message: "Hello webclient!!",
+            isSent: true,
+            displayName: ""
+        )
+    ]
+    init(socketUrl: String, username: String, displayName: String? = "iOS") {
+        self.socketUrl = socketUrl
+        self.username = username
+        self.displayName = displayName ?? username
         manager = SocketManager(
             socketURL: URL(string: socketUrl)!,
             config: [
                 .log(true),
                 .compress,
-                .forceWebsockets(true)
+                .forceWebsockets(true),
             ]
         )
 
@@ -29,7 +54,9 @@ class BroadcastWebSocketManager: ObservableObject {
         setupListeners()
     }
 
-    func connect() {
+    func connect(to incomingSocketUrl: String) {
+        self.socketUrl = incomingSocketUrl
+        print("on socket, connecting to:", self.socketUrl)
         socket.connect()
     }
 
@@ -38,10 +65,8 @@ class BroadcastWebSocketManager: ObservableObject {
     }
 
     func send(message: String) {
-
-        socket.emit("send-message", [
-            "message": message
-        ])
+        let devinfo = UIDevice.current.name
+        socket.emit( "send-message", ["message": message, "displayName": self.displayName, "IsSent": false, "uid": devinfo ] )
     }
 
     func setupListeners() {
@@ -49,7 +74,7 @@ class BroadcastWebSocketManager: ObservableObject {
         socket.on(clientEvent: .connect) { [weak self] data, ack in
             print("Connected to server")
             self?.isConnected = true
-            
+
             DispatchQueue.main.async {
                 self?.isConnected = true
             }
@@ -58,7 +83,7 @@ class BroadcastWebSocketManager: ObservableObject {
         socket.on(clientEvent: .disconnect) { [weak self] data, ack in
             print("Disconnected")
             self?.isConnected = false
-            
+
             DispatchQueue.main.async {
                 self?.isConnected = false
             }
@@ -66,6 +91,22 @@ class BroadcastWebSocketManager: ObservableObject {
 
         socket.on("recieve-new-message") { data, ack in
             print("Message received:", data)
+//            messageArray.append(data)
+            guard let raw = data.first else { return }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: raw)
+                
+                let decoded = try JSONDecoder().decode(
+                    MessageArray.self,
+                    from: jsonData
+                )
+                DispatchQueue.main.async {
+                    self.messageArray.append(decoded)
+                }
+            } catch {
+                print(error)
+            }
         }
     }
 }

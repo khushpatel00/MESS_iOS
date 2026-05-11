@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct ContentView: View {
+struct DMContentView: View {
     // MARK: - Environment
     @Environment(\.horizontalSizeClass)
     private var horizontalSizeClass
@@ -23,7 +23,7 @@ struct ContentView: View {
     // MARK: - State
     @State private var users: [UserList] = []
     @State public var showingAlert = false
-    @State public var inputText = ""
+    @State public var inputText = "http://"
     
     // MARK: - Body
     
@@ -43,7 +43,7 @@ struct ContentView: View {
 // MARK: - Modern Navigation (iOS 16+)
 
 @available(iOS 16.0, *)
-private extension ContentView {
+private extension DMContentView {
     var modernNavigation: some View {
         Group {
             if shouldUseSidebar {
@@ -62,12 +62,13 @@ private extension ContentView {
                 }
             }
         }
+        .background(Color("Background"))
     }
 }
 
 // MARK: - Legacy Navigation (iOS 15)
 
-private extension ContentView {
+private extension DMContentView {
     var legacyNavigation: some View {
         NavigationView {
             chatList
@@ -78,7 +79,7 @@ private extension ContentView {
 }
 
 // MARK: - Main Chat List UI
-private extension ContentView {
+private extension DMContentView {
     var chatList: some View {
         ScrollView {
             connectionButton
@@ -90,7 +91,7 @@ private extension ContentView {
     }
 }
 // MARK: - Components
-private extension ContentView {
+private extension DMContentView {
     var connectionButton: some View {
         HStack{
             if #available(iOS 26.0, *) {
@@ -181,7 +182,7 @@ private extension ContentView {
     }
 }
 // MARK: - User Row
-private extension ContentView {
+private extension DMContentView {
     func userRow(_ user: UserList) -> some View {
         NavigationLink {
             ChatView(socketURL: inputText,username: user.username)
@@ -196,7 +197,7 @@ private extension ContentView {
     }
 }
 // MARK: - Networking
-extension ContentView {
+extension DMContentView {
     public func connectToServer() {
         Task {
             do {
@@ -262,5 +263,5 @@ struct EmptyChatView: View {
 }
 // MARK: - Preview
 #Preview {
-    ContentView()
+    DMContentView()
 }
