@@ -32,6 +32,8 @@
 		17BAD3A02FBB682700BAABD1 /* Auth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17BAD39E2FBB682700BAABD1 /* Auth.xcdatamodeld */; };
 		17D0C6C72FB9B42C00A4C477 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0C6C62FB9B42B00A4C477 /* OnboardingView.swift */; };
 		17D753E92FAD020100942CD8 /* DMContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D753E82FAD020100942CD8 /* DMContentView.swift */; };
+		17ECC4622FBF019A009FBE6A /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ECC4612FBF019A009FBE6A /* AccountView.swift */; };
+		17ECC4642FBF03C6009FBE6A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ECC4632FBF03C6009FBE6A /* SettingsView.swift */; };
 		17FA527D2FB0D87200A25CCC /* DMSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		17BAD39F2FBB682700BAABD1 /* Auth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Auth.xcdatamodel; sourceTree = "<group>"; };
 		17D0C6C62FB9B42B00A4C477 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		17D753E82FAD020100942CD8 /* DMContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMContentView.swift; sourceTree = "<group>"; };
+		17ECC4612FBF019A009FBE6A /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		17ECC4632FBF03C6009FBE6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSocketManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,8 @@
 				179160932FB101F3008526A6 /* BroadcastChatView.swift */,
 				17FA527C2FB0D87200A25CCC /* DMSocketManager.swift */,
 				176C60942FAB37FB000CAF5F /* BroadcastSocketManager.swift */,
+				17ECC4632FBF03C6009FBE6A /* SettingsView.swift */,
+				17ECC4612FBF019A009FBE6A /* AccountView.swift */,
 				175D1F892FA3672F0054C52E /* Models */,
 				1785FCB12FA0913200F536E9 /* Components */,
 				176AF7E62F9FDF2100F1999D /* Assets.xcassets */,
@@ -338,8 +344,10 @@
 				179160922FB100BF008526A6 /* BroadcastContentView.swift in Sources */,
 				176AF7E32F9FDF1F00F1999D /* MESSApp.swift in Sources */,
 				1785FCB52FA0917100F536E9 /* TitleRow.swift in Sources */,
+				17ECC4622FBF019A009FBE6A /* AccountView.swift in Sources */,
 				17AE53412FADE31500E592D0 /* MessageTitleRow.swift in Sources */,
 				1736DB212FBC6D8400634BD6 /* KeychainManager.swift in Sources */,
+				17ECC4642FBF03C6009FBE6A /* SettingsView.swift in Sources */,
 			);
 		};
 		176AF7EB2F9FDF2200F1999D /* Sources */ = {

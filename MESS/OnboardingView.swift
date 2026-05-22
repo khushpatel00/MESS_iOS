@@ -154,6 +154,7 @@ struct OnboardingPageView: View {
                                         errorMessage = ""
                                     }
                                     login(username: loginUsernameInput, password: loginPasswordInput, errorMessage: $errorMessage, loadingController: $isLoading, loginState: $loginState)
+                                    
                                 }){
                                     HStack{
                                         ZStack {
@@ -349,21 +350,28 @@ struct OnboardingPageView: View {
                         
                         
                     }
+                    .onChange(of: loginState) { state in
+                        if state == 0 {
+                            withAnimation(.smooth) {
+                                switchBinding += 1
+                            }
+                        }
+                    }
                 }
             }
             //        Text("Page \(item)")
             //            .font(.title3)
             Spacer()
             
-            if switchBinding<3 && switchBinding != 1 {
+            if switchBinding<=2 && switchBinding != 1 {
                 Button(action: {
-                    if(switchBinding >= 3) {
-                        withAnimation {
+                    if(switchBinding > 1) {
+                        withAnimation(.smooth) {
                             switchBinding = 0
                         }
                     }
                     else {
-                        withAnimation {
+                        withAnimation(.smooth) {
                             switchBinding+=1
                         }
                     }
@@ -386,26 +394,38 @@ struct OnboardingView: View {
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
     
     @State public var currentPage = 0
-    
+    @State private var token = KeychainManager.shared.getToken()
     var body: some View {
         TabView(selection: $currentPage) {
-            ForEach(0..<4, id: \.self) { index in
+            ForEach(0..<3, id: \.self) { index in
                 VStack{
                     Spacer()
                     OnboardingPageView(item: index, switchBinding: $currentPage)
-                    if index == 3 {
+                    if index == 2 {
                         Button(action: {
-                            hasCompletedOnboarding = true
+                            token = KeychainManager.shared.getToken()
+                            
+                            if (token == nil) {
+                                withAnimation {
+                                    currentPage -= 1
+                                }
+                            }
+                            else {
+                                withAnimation {
+                                    hasCompletedOnboarding = true
+                                }
+                            }
                         }) {
                             Spacer()
-                            Text("Let's Start")
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(.ultraThinMaterial)
-                                .foregroundColor(Color("ThemedText"))
-                                .clipShape(.capsule)
-                                .padding(.horizontal)
+                            VStack {
+                                Text("Let's Start")
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(.capsule)
+                                    .padding(.horizontal)
+                            }
                         }
                         .padding(.bottom, 40)
                     }
@@ -414,7 +434,8 @@ struct OnboardingView: View {
                 .tag(index)
             }
         }
-        .tabViewStyle(.page)
+        .tabViewStyle(.page(indexDisplayMode: currentPage == 1 ? .never : .always))
+//        .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
         
         //        TabView(selection: $currentPage) {

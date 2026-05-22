@@ -163,10 +163,10 @@ private extension DMContentView {
     var staticPreviewChat: some View {
         
         NavigationLink {
-            ChatView(socketURL: inputText, username: "Fragile")
+            ChatView(socketURL: inputText, username: "Raj Surani")
         } label: {
             TitleRow(
-                username: "Fragile",
+                username: "Raj Surani",
                 isConnected: false
             )
             .padding(.horizontal)

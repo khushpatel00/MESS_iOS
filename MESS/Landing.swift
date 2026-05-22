@@ -40,6 +40,26 @@ struct Landing: View {
                             Image(systemName: "antenna.radiowaves.left.and.right")
                         }
                     }
+                AccountView()
+                    .padding(.bottom, 1)
+//                    .background(Color("Background"))
+                    .tabItem{
+                        Label {
+                            Text("Account")
+                        } icon: {
+                            Image(systemName: "person")
+                        }
+                    }
+                SettingsView()
+                    .padding(.bottom, 1)
+//                    .background(Color("Background"))
+                    .tabItem{
+                        Label {
+                            Text("Settings")
+                        } icon: {
+                            Image(systemName: "gear")
+                        }
+                    }
             }
             //        .padding(.top)
             .safeAreaInset(edge: .bottom) {
@@ -122,9 +142,7 @@ struct Landing: View {
 }
 
 #Preview {
-    Landing()
-        .onAppear {
-            // Wipes the setting ONLY inside the preview environment canvas
-            UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
-        }
+    UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+
+    return Landing()
 }
