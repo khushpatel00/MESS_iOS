@@ -50,6 +50,7 @@ struct Landing: View {
                             Image(systemName: "person")
                         }
                     }
+                    .background(Color("Background"))
                 SettingsView()
                     .padding(.bottom, 1)
 //                    .background(Color("Background"))
